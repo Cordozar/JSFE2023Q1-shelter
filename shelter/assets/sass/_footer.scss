@@ -1,0 +1,129 @@
+.footer {
+  background: $background;
+}
+.footer__flex-container {
+  @include media-tablet {
+    justify-content: center;
+    padding: 30px 0 375px;
+    column-gap: 60px;
+    background-position: center bottom;
+  }
+
+  @include media-mobile {
+    padding-bottom: 309px;
+    background-size: 260px 269px;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  padding: 57px 0 58px;
+  column-gap: 159px;
+  background-image: url('../assets/img/footer/footer-puppy.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.footer__column {
+  @include media-mobile {
+    display: flex;
+
+    // column-gap: normal;
+    flex-direction: column;
+    width: auto;
+  }
+  &:first-child {
+    @include media-mobile {
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    width: 280px;
+  }
+  &:last-child {
+    width: 303px;
+  }
+}
+.footer__column-title {
+  @include font-georgia(
+    $font-size: 3.5rem,
+    $line-height: 4.55rem,
+    $letter-spacing: 2.1px,
+    $color: $color-white
+  );
+
+  @include media-mobile {
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+
+  .footer__column:first-child & {
+    @include media-mobile {
+      margin-bottom: 44px;
+    }
+    margin-bottom: 41px;
+  }
+  .footer__column:last-child & {
+    @include media-mobile {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+    margin-bottom: 32px;
+  }
+}
+.footer__contact-link {
+  display: inline-flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 43px;
+  }
+}
+
+.footer__contact-img {
+  margin-right: 20px;
+}
+.footer__contact {
+  @include font-georgia(
+    $font-size: 2rem,
+    $letter-spacing: 1.2px,
+    $color: $color-primary
+  );
+
+  @include transition(color);
+
+  @include media-hover {
+    .footer__contact-link:hover & {
+      color: $color-white;
+    }
+  }
+  position: relative;
+}
+.footer__location-link {
+  display: inline-flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    @include media-mobile {
+      margin-bottom: 39px;
+    }
+    margin-bottom: 34px;
+  }
+}
+.footer__location-img {
+  margin-right: 20px;
+}
+.footer__location {
+  @include font-georgia(
+    $font-size: 2rem,
+    $letter-spacing: 1.2px,
+    $color: $color-primary
+  );
+
+  @include transition(color);
+
+  @include media-hover {
+    .footer__location-link:hover & {
+      color: $color-white;
+    }
+  }
+  position: relative;
+}

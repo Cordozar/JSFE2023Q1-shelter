@@ -1,0 +1,54 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+
+html {
+  font-size: 10px;
+
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  position: relative;
+}
+
+.body-no-scroll {
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  $padding: 15px;
+
+@include media-tablet {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+@include media-mobile {
+    padding-right: $left-right-padding-wrapper-mobile;
+    padding-left: $left-right-padding-wrapper-mobile;
+  }  max-width: 1200px + 2 * $padding;
+  margin: 0 auto;
+  padding-right: $padding;
+  padding-left: $padding;
+}

@@ -1,0 +1,28 @@
+@import '../sass/mixins';
+
+.canvas {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 16%, 0.6);
+  opacity: 0;
+
+  &-active {
+    display: block;
+    opacity: 0.5;
+    // animation-name: opacity;
+    // animation-duration: 0.5s;
+    // animation-timing-function: linear;
+  }
+
+  // @keyframes opacity {
+  //   from {
+  //     opacity: 0;
+  //   }
+
+  //   to {
+  //     opacity: 0.5;
+  //   }
+  // }
+}

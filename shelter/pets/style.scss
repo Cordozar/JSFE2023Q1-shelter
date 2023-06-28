@@ -1,0 +1,51 @@
+@import url('../assets/normalize.css');
+@import '../assets/sass/base';
+@import '../assets/sass/variables';
+@import '../assets/sass/placeholders';
+@import '../assets/sass/mixins';
+@import '../assets/sass/header';
+@import '../assets/sass/slider';
+@import '../assets/sass/footer';
+@import '../assets/sass/burger';
+@import '../assets/sass/canvas';
+@import '../assets/sass/modal';
+
+.our-pets {
+  @include media-tablet {
+    padding-bottom: 76px;
+  }
+
+  @include media-mobile {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  padding: 81px 0 100px;
+  background-color: $color-background-second;
+}
+.our-pets__flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.our-friends__title {
+  @include font-georgia(
+    $font-size: 3.5rem,
+    $line-height: 4.55rem,
+    $letter-spacing: 2.1px,
+    $color: $color-dark-first
+  );
+
+  @include media-tablet {
+    margin-bottom: 29px;
+  }
+
+  @include media-mobile {
+    @include title-style-for-320();
+
+    margin-bottom: 41px;
+  }
+  align-self: center;
+  margin-bottom: 59px;
+  text-align: center;
+}
+.our-friends__slider {
+}

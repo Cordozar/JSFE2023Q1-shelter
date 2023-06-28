@@ -1,0 +1,137 @@
+.header_flex-container {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  &_main {
+    @include media-tablet {
+      margin-bottom: 60px;
+    }
+
+    @include media-mobile {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    margin-bottom: 90px;
+  }
+  &_pets {
+    @include media-mobile {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    padding: 29px 0 30px;
+  }
+}
+.logo {
+  margin-right: auto;
+}
+.logo__link {
+}
+.logo__title {
+  @include font-georgia($font-size: 3.2rem, $letter-spacing: 1.9px);
+
+  display: block;
+  padding-bottom: 9px;
+
+  &_main {
+    color: $color-primary;
+  }
+  &_pets {
+    color: $color-dark-first;
+  }
+}
+.logo__subtitle {
+  @include font-arial($font-size: 1.3rem, $letter-spacing: 1.3px);
+
+  display: block;
+  padding-left: 5px;
+
+  &_main {
+    color: $color-white;
+  }
+  &_pets {
+    color: $color-dark-first;
+  }
+}
+.header__nav {
+  @include media-mobile {
+    position: fixed;
+    top: 0;
+    right: -$left-right-padding-wrapper-mobile - 320px;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    &-main {
+      background-color: $backgound-burger;
+    }
+    &-pets {
+      background-color: rgb(158, 158, 158)
+    }
+  }
+
+  @include transition(right);
+  &-active {
+    right: -$left-right-padding-wrapper-mobile;
+  }
+}
+.header__nav-list {
+  @include font-arial($font-size: 1.5rem);
+
+  @include media-mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 100vh;
+
+    font-size: 3.2rem;
+  }
+  display: flex;
+  column-gap: 35px;
+  transform: translate(-2px, -1px);
+}
+.header__nav-item {
+  @include media-mobile {
+    &:not(:last-child) {
+      margin-bottom: 55px;
+    }
+  }
+}
+.header__nav-link {
+  @include transition(color);
+
+  position: relative;
+
+  &_main {
+    @include media-hover {
+      &:hover {
+        color: $color-white;
+      }
+    }
+    color: $color-dark-second;
+  }
+  &_pets {
+    @include media-hover {
+      &:hover {
+        color: $color-black;
+      }
+    }
+    color: $color-dark-first;
+  }
+}
+.header__nav-link-selected {
+  color: $color-white;
+  cursor: default;
+
+  &_main {
+    color: $color-white;
+  }
+  &_pets {
+    color: $color-black;
+  }
+
+  &::after {
+    @extend %underline-for-link;
+
+    opacity: 1;
+  }
+}

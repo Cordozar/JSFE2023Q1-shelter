@@ -1,0 +1,32 @@
+@import './placeholders';
+@import './mixins';
+
+.burger {
+  @include media-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  @include transition(transform);
+
+  display: none;
+
+  &-active {
+    transform: rotate(-90deg);
+  }
+}
+.burger__line {
+  height: 2px;
+
+  &_main {
+    background-color: $color-primary;
+  }
+  &_pets {
+    background-color: $color-black;
+  }
+}

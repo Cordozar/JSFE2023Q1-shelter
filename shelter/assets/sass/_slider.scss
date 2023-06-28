@@ -1,0 +1,185 @@
+.slider {
+  display: flex;
+
+  &_main {
+    @include media-tablet {
+      margin-bottom: 58px;
+    }
+
+    @include media-mobile {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 41px;
+    }
+    align-items: center;
+    margin-bottom: 61px;
+  }
+  &_pets {
+    @include media-tablet {
+      padding-right: 64px;
+      padding-left: 64px;
+    }
+
+    @include media-laptop {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    flex-direction: column;
+  }
+}
+.slider__wrapper {
+  @include media-tablet {
+    // overflow-y: hidden;
+  }
+  &_main {
+  height: 435px;
+
+    @include media-tablet {
+      // height: 435px;
+    }
+
+    @include media-mobile {
+      margin-bottom: 19px;
+    }
+    width: 100%;
+  }
+  &_pets {
+    @include media-tablet {
+    overflow-y: hidden;
+
+      height: 1365px;
+      margin-bottom: 39px;
+      padding-right: 64px;
+      padding-left: 64px;
+    }
+
+    @include media-mobile {
+      margin-bottom: 41px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+    margin-bottom: 61px;
+  }
+}
+.slider__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 30px;
+  &_pets {
+    @include media-tablet {
+      row-gap: 31px;
+    }
+    // row-gap: 30px;
+  }
+}
+.slider__card {
+}
+.card {
+  @include transition(box-shadow);
+
+  // @include media-tablet {
+  //   &:hover {
+  //     box-shadow: none !important;
+  //   }
+  // }
+  @include media-mobile {
+    margin: 0 auto;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  background-color: #fafafa;
+  border-radius: 9px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  }
+}
+.card__photo {
+}
+.card__pet-name {
+  @include font-georgia(
+    $font-size: 20px,
+    $letter-spacing: 1.3px,
+    $color: $color-dark-first
+  );
+
+  padding-top: 29px;
+  padding-bottom: 30px;
+  transform: translateX(1px);
+}
+.card__btn {
+  @include btn(
+    $border: 2px solid $color-primary,
+    $background-color: transparent,
+    $padding: 15px 44px
+  );
+
+  @include transition(background-color, border-color);
+
+  @include media-hover {
+    .card:hover & {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+}
+.slider__controls-block {
+  @include font-georgia($font-size: 2rem, $line-height: 0);
+
+  @include media-mobile {
+    column-gap: 10px;
+  }
+  display: flex;
+  align-self: center;
+  column-gap: 20px;
+}
+.slider__controls {
+  @include transition(background-color, border-color);
+
+  @include media-hover {
+    &:hover {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+
+  @extend %control-elem;
+
+  &_counter-pets {
+    background-color: $color-primary;
+  }
+  &_prev-main {
+    @include media-tablet {
+      margin-right: 12px;
+    }
+
+    @include media-mobile {
+      order: 1;
+      margin-right: 0;
+      margin-left: 58px;
+    }
+    margin-right: 53px;
+  }
+  &_next-main {
+    @include media-tablet {
+      margin-left: 12px;
+    }
+
+    @include media-mobile {
+      order: 2;
+      margin-right: 58px;
+      margin-left: 0;
+    }
+    margin-left: 53px;
+  }
+  &_disactive {
+    color: $color-dark-second !important;
+    border: 2px solid $color-dark-second;
+    pointer-events: none;
+  }
+}
